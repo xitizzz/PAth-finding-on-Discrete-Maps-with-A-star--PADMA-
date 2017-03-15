@@ -11,7 +11,7 @@ import java.io.*;
 
 /**
  *
- * @author Susmitha
+ * @author xitizzz
  */
 public class MapGenerator {
     
