@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.stage.FileChooser?>
+<?import javafx.collections.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="gridContainer" gridLinesVisible="true" alignment="CENTER" GridPane.columnIndex="1" fx:controller="padma.DisplayGridController">
+                <padding>
+                    <Insets top="0" bottom="0" left="0" right="10"/>
+                </padding>
+</GridPane> 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.stage.FileChooser?>
+<?import javafx.collections.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="200" prefWidth="320"  fx:controller="padma.PADMA_FXMLController">
+    <children>
+        <!--
+        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
+        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        -->
+        <GridPane fx:id="mainContainer" gridLinesVisible="false"><padding><Insets top="25" bottom="25" left="25" right="25"/></padding>
+            <GridPane fx:id="gridContainer" gridLinesVisible="true" alignment="CENTER" GridPane.columnIndex="1">
+                <padding>
+                    <Insets top="0" bottom="0" left="0" right="10"/>
+                </padding>
+            </GridPane> 
+            
+            <!--fx:include fx:id="gridPane" source="DisplayGrid.fxml" -->
+            
+            <GridPane fx:id="controlPane" alignment="CENTER" hgap="10" vgap="10"    GridPane.columnIndex="2" >
+                 <padding>
+                     <Insets bottom="10.0" left="10.0" right ="10.0" top="10.0"/>
+                 </padding>
+                <Button fx:id="createMap"  GridPane.rowIndex="0" GridPane.columnIndex="1"  text="Create Map" onAction="#createMap"  />
+                <TextField alignment="CENTER" promptText="File Name" fx:id="cm" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+                <Button fx:id="readMap" GridPane.rowIndex="2" GridPane.columnIndex="1"  text="Read Map" onAction="#readMap" /> 
+                <TextField alignment="CENTER" promptText="File Name" fx:id="rm" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+                <Button fx:id="execute" GridPane.rowIndex="7" GridPane.columnIndex="3"  text="Execute"  onAction="#runAstar" />   
+                <RadioButton contentDisplay="CENTER"  fx:id="uniformCost" GridPane.rowIndex="4" GridPane.columnIndex="1" text="Uniform-cost" onAction="#setUniform"  /> 
+                <RadioButton contentDisplay="CENTER" fx:id="aStar" GridPane.rowIndex="4" GridPane.columnIndex="4" text="A*" onAction="#setAstar" />
+                <RadioButton contentDisplay="CENTER"  fx:id="weightedAstar" GridPane.rowIndex="4" GridPane.columnIndex="3" text="Weighted A*" onAction="#setWeightedAstar" />    
+                <Label alignment="CENTER" fx:id="heuristic" visible="false"  GridPane.rowIndex="5" GridPane.columnIndex="1" text="select heuristic" />
+                <Label alignment="CENTER" fx:id="hAndW" visible="false"  GridPane.rowIndex="5" GridPane.columnIndex="1" text="select heuristic and weight" />
+                <ComboBox promptText="Heuristic" fx:id="hu" visible="true" GridPane.rowIndex="6" GridPane.columnIndex="1" >
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Heuristic 0" />
+                            <String fx:value="Heuristic 1" />
+                            <String fx:value="Heuristic 2" />
+                            <String fx:value="Heuristic 3" />
+                            <String fx:value="Heuristic 4" />
+                            <String fx:value="Heuristic 5" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>    
+                <TextField alignment="CENTER" promptText="Weight" fx:id="w" visible="true" GridPane.rowIndex="6" GridPane.columnIndex="3" />
+       
+            </GridPane>
+             
+        </GridPane>
+    </children>
+</AnchorPane>
